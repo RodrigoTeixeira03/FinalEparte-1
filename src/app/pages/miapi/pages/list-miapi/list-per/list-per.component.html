@@ -1,0 +1,42 @@
+<div *ngIf="personajeAll?.personajes && personajeAll?.personajes?.length; else sinPersonajes">
+    <h2>Lista de Personajes</h2>
+    <button type="button" class="btn btn-primary w-100" (click)="modal.open()">Agregar Personajes</button>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Dificultad</th>
+                <th>Pasiva</th>
+                <th>Q</th>
+                <th>W</th>
+                <th>E</th>
+                <th>R</th>
+                <th>Configurar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let personaje of personajeAll?.personajes">
+                <td>{{ personaje.nombre }}</td>
+                <td>{{ personaje.rol }}</td>
+                <td>{{ personaje.dificultad }}</td>
+                <td>{{ personaje.habilidades.pasiva }}</td>
+                <td>{{ personaje.habilidades.q }}</td>
+                <td>{{ personaje.habilidades.w }}</td>
+                <td>{{ personaje.habilidades.e }}</td>
+                <td>{{ personaje.habilidades.r }}</td>
+                <td>
+                    <button class="btn btn-success" type="button" (click)="modal2.open(personaje)">Editar</button>
+                    <button class="btn btn-danger" type="button" (click)="eliminarElemeto(personaje._id!)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #sinPersonajes>
+    <p>No hay personajes disponibles para mostrar.</p>
+</ng-template>
+
+<app-modal-crear (eventActualizar)="actualizarElemento()"></app-modal-crear>
+<app-modal-editar (eventActualizar)="actualizarElemento()"></app-modal-editar>

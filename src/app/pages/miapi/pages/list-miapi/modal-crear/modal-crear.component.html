@@ -1,0 +1,50 @@
+<div class="modal fade" #modalElement id="modalAgregarPersonaje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Personaje</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="nuevoPersonaje.nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="rol" class="form-label">Rol</label>
+              <input type="text" class="form-control" id="rol" [(ngModel)]="nuevoPersonaje.rol" name="rol" required>
+            </div>
+            <div class="mb-3">
+              <label for="dificultad" class="form-label">Dificultad</label>
+              <input type="text" class="form-control" id="dificultad" [(ngModel)]="nuevoPersonaje.dificultad" name="dificultad" required>
+            </div>
+            <div class="mb-3">
+              <label for="pasiva" class="form-label">Pasiva</label>
+              <input type="text" class="form-control" id="pasiva" [(ngModel)]="nuevoPersonaje.habilidades.pasiva" name="pasiva" required>
+            </div>
+            <div class="mb-3">
+              <label for="q" class="form-label">Habilidad Q</label>
+              <input type="text" class="form-control" id="q" [(ngModel)]="nuevoPersonaje.habilidades.q" name="q" required>
+            </div>
+            <div class="mb-3">
+              <label for="w" class="form-label">Habilidad W</label>
+              <input type="text" class="form-control" id="w" [(ngModel)]="nuevoPersonaje.habilidades.w" name="w" required>
+            </div>
+            <div class="mb-3">
+              <label for="e" class="form-label">Habilidad E</label>
+              <input type="text" class="form-control" id="e" [(ngModel)]="nuevoPersonaje.habilidades.e" name="e" required>
+            </div>
+            <div class="mb-3">
+              <label for="r" class="form-label">Habilidad R</label>
+              <input type="text" class="form-control" id="r" [(ngModel)]="nuevoPersonaje.habilidades.r" name="r" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="agregar()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+<!-- Modal de Edición -->
+<div class="modal fade" #modalElement id="editPersonajeModal" tabindex="-1" aria-labelledby="editPersonajeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPersonajeModalLabel">Editar Personaje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="close()"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario de Edición -->
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" [(ngModel)]="personajeToEdit.nombre"
+                            name="nombre" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="rol" class="form-label">Rol</label>
+                        <input type="text" class="form-control" id="rol" [(ngModel)]="personajeToEdit.rol"
+                            name="rol" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="dificultad" class="form-label">Dificultad</label>
+                        <input type="text" class="form-control" id="dificultad"
+                            [(ngModel)]="personajeToEdit.dificultad" name="dificultad" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="habilidades" class="form-label">Habilidades</label>
+                        <div class="mb-2">
+                            <label for="pasiva" class="form-label">Pasiva</label>
+                            <input type="text" class="form-control" id="pasiva"
+                                [(ngModel)]="personajeToEdit.habilidades.pasiva" name="pasiva" />
+                        </div>
+                        <div class="mb-2">
+                            <label for="q" class="form-label">Q</label>
+                            <input type="text" class="form-control" id="q" [(ngModel)]="personajeToEdit.habilidades.q"
+                                name="q" />
+                        </div>
+                        <div class="mb-2">
+                            <label for="w" class="form-label">W</label>
+                            <input type="text" class="form-control" id="w" [(ngModel)]="personajeToEdit.habilidades.w"
+                                name="w" />
+                        </div>
+                        <div class="mb-2">
+                            <label for="e" class="form-label">E</label>
+                            <input type="text" class="form-control" id="e" [(ngModel)]="personajeToEdit.habilidades.e"
+                                name="e" />
+                        </div>
+                        <div class="mb-2">
+                            <label for="r" class="form-label">R</label>
+                            <input type="text" class="form-control" id="r" [(ngModel)]="personajeToEdit.habilidades.r"
+                                name="r" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="close()">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="saveChanges()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
